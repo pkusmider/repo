@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "4adfe324-3d7c-4a96-aace-68184cf07266",
+		"name": "Firebase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24619615"
+	},
+	"item": [
+		{
+			"name": "Create Person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"imie\": \"Marek\",\r\n\r\n    \"nazwisko\": \"Zegarek\",\r\n\r\n    \"dataUrodzenia\": \"1990-02-29T12:00:00\",\r\n\r\n    \"aktywny\": true,\r\n\r\n    \"wzrost\": 186.5,\r\n\r\n    \"zainteresowania\": [\"siatkówka\",\"gitara\"],\r\n\r\n    \"adres\":{\r\n\r\n        \"kraj\":\"pl\",\r\n\r\n        \"miasto\" : \"Gdynia\"\r\n\r\n    },\r\n\r\n    \"jezyki\":[{\"symbol\":\"pl\", \"poziom\":6},{\"symbol\":\"en\", \"poziom\":4}]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/persons.json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"persons.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tytul\": \"For Sure Not You\",\r\n    \"autor\": \"Ancerowicz Weronika\",\r\n    \"liczbaStron\": 200,\r\n    \"spisTresci\": [\r\n        {\r\n            \"nazwaRozdziału\": \"Rozdział 1\",\r\n            \"numerStrony\": 20\r\n        },\r\n        {\r\n            \"nazwaRozdziału\": \"Rozdział 2\",\r\n            \"numerStrony\": 30\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/books.json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Books (second book)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tytul\": \"True Friends\",\r\n    \"autor\": \"Aleksandra Negrońska\",\r\n    \"liczbaStron\": 100,\r\n    \"spisTresci\": [\r\n        {\r\n            \"nazwaRozdziału\": \"Prolog\",\r\n            \"numerStrony\": 20\r\n        },\r\n        {\r\n            \"nazwaRozdziału\": \"Bitwa\",\r\n            \"numerStrony\": 30\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/books.json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/books.json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Books (tytuł)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tytul\": \"Inny tutuł\",\r\n    \"autor\": \"Ancerowicz Weronika\",\r\n    \"liczbaStron\": 200,\r\n    \"spisTresci\": [\r\n        {\r\n            \"nazwaRozdziału\": \"Rozdział 1\",\r\n            \"numerStrony\": 20\r\n        },\r\n        {\r\n            \"nazwaRozdziału\": \"Rozdział 2\",\r\n            \"numerStrony\": 30\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/books/-NQjwejQYCpGhBmeGgdQ.json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books",
+						"-NQjwejQYCpGhBmeGgdQ.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Books (autor)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"autor\": \"Piotr Piotrowki\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/books/-NQjwejQYCpGhBmeGgdQ.json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books",
+						"-NQjwejQYCpGhBmeGgdQ.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/books/-NQjyTKZ3eMsk3EFZybJ.json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books",
+						"-NQjyTKZ3eMsk3EFZybJ.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
