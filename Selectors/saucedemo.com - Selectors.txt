@@ -1,0 +1,16 @@
+ saucedemo.com - Selectors
+ 
+ css:
+user-name input: form div #user-name
+password input: form div #password
+form input #login-button
+after logged in: .shopping_cart_link
+ 
+ xpath:
+ 
+username input: //form/div/input[@id='user-name']
+password input: //form/div/input[@id='password']
+login button: //form/input[@id='login-button']
+after logged in: //a[contains(@class,'shopping_cart_link')]
+ 
+ 
